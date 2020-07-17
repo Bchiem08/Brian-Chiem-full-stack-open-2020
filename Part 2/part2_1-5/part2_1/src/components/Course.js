@@ -1,27 +1,7 @@
 import React from "react";
-
-const Header = ({ name }) => {
-  return <h1>{name}</h1>;
-};
-
-const Part = ({ partInfo }) => {
-  return (
-    <p>
-      {partInfo.name} {partInfo.exercises}
-    </p>
-  );
-};
-
-const Total = ({ parts }) => {
-  const sum = parts.reduce((s, p) => s + p.exercises, 0);
-
-  return <h3>total of {sum} exercises</h3>;
-};
-
-const Content = ({ parts }) => {
-  const partList = parts.map((part) => <Part key={part.id} partInfo={part} />);
-  return <div>{partList}</div>;
-};
+import Header from "./Header";
+import Total from "./Total";
+import Content from "./Content";
 
 const Course = ({ course }) => {
   const { name, parts } = course;
