@@ -13,10 +13,7 @@ const Part = ({ partInfo }) => {
 };
 
 const Total = ({ parts }) => {
-  const sum = parts.reduce(
-    (partNumber, partAmount) => partNumber + partAmount.exercises,
-    0
-  );
+  const sum = parts.reduce((s, p) => s + p.exercises, 0);
 
   return <h3>total of {sum} exercises</h3>;
 };
